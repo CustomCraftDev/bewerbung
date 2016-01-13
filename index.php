@@ -99,7 +99,7 @@
 						
 						<div class="panel-body">
 						
-							<form id="myform" class="form-horizontal">
+							<form id="myform" action="http://www.animes4me.net/minecraft/robert/bewerbung.php" method="post" class="form-horizontal">
 							
 							<div class="form-group">
 								<center><h4>VentoxCraft - Bewerbungsformular</h4></center>
@@ -216,16 +216,7 @@
 					alert("Bitte fülle alle angegebenen Felder aus.");
 				}else{
 					if(document.getElementById('checkbox').checked){
-						$.ajax({
-							url:'http://www.animes4me.net/minecraft/robert/bewerbung.php',
-							type:'post',
-							data:$('#myform').serialize(),
-							success:function(){
-								$("#submit").removeClass('btn btn-default pull-right btn-submit btn-success').addClass('btn btn-default pull-right btn-primary');
-								
-								$("#submit").attr("value", "Abgeschickt").attr("id", "no_submit");
-							}
-						});
+						$("#myform").submit();
 					}else{
 						alert("Du musst den AGB's zustimmen.");
 					}
